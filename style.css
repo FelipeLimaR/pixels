@@ -7,3 +7,19 @@
     width: 100px;
     display: inline-block;
 }
+
+#color-1 {
+    background-color: black;
+}
+
+#color-2 {
+    background-color: purple;
+}
+
+#color-3 {
+    background-color: blueviolet;
+}
+
+#color-4 {
+    background-color: rgb(168, 53, 53);
+}
