@@ -9,14 +9,20 @@
 </head>
 <body>
     <h1 id="title">Paleta de Cores</h1>
-
-    <div id="color-palette">
-        <div id="color-1" class="color"></div>
-        <div id="color-2" class="color"></div>
-        <div id="color-3" class="color"></div>
-        <div id="color-4" class="color"></div>
-    </div>
     
+    <div id="color-palette">
+        <div class="color-1 color"></div>
+        <div class="color-2 color"></div>
+        <div class="color-3 color"></div>
+        <div class="color-4 color"></div>
+    </div>
+
+    <input id="board-size" type="number" min="1" minlength="1" placeholder="digite o valor aqui">
+
+    <button id="generate-board" onclick="changeSize()">VQV</button>
+
+    <button type="button" id="clear-board" onclick="clearBoard()">Limpar</button>
+
     <div id="pixel-board">
         <div class="pixel"></div>
         <div class="pixel"></div>
@@ -44,6 +50,6 @@
         <div class="pixel"></div>
         <div class="pixel"></div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

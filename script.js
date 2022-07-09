@@ -1,32 +1,61 @@
-const colorDefault = document.querySelector('#color-1');
-colorDefault.classList.add('selected');
-const paint = document.getElementById('pixel-board');
+const black = document.querySelector('.color-1')
+black.classList.add('color-1')
+black.classList.add('selected');
 
+const purple = document.querySelector('.color-2')
+purple.classList.add('color-2')
 
-const color1 = document.querySelector('#color-1');
-const color2 = document.querySelector('#color-2');
-const color3 = document.querySelector('#color-3');
-const color4 = document.querySelector('#color-4');
-const color5 = document.querySelector('#color-5');
+const blueViolet = document.querySelector('.color-3')
+blueViolet.classList.add('color-3')
 
-function changeColor(event) {
-    // event.target.classList.add('selected');
-    event.target.classList.add('blackGround')
+const brown = document.querySelector('.color-4')
+brown.classList.add('color-4')
+
+const board = document.querySelector('#pixel-board')
+
+function pickColor (event) {
+    const selecionada = document.querySelector('.selected')
+    selecionada.classList.remove('selected')
+    event.target.classList.add('selected')
 }
 
-paint.addEventListener('click', changeColor);
-
-
-function colorSelected(event) {
-    const change = document.querySelector('.selected');
-    change.classList.remove('selected')
-    event.target.classList.add('selected');
+function changeColor(cor) {
+    const teste = document.querySelector('.selected')
+    const colorChanged = window.getComputedStyle(teste).getPropertyValue('background-Color');
+    
+    if ( cor.target.classList.contains('pixel')) {
+        cor.target.style.backgroundColor = colorChanged
+    }
 }
 
-color1.addEventListener('click', colorSelected)
-color2.addEventListener('click', colorSelected)
-color3.addEventListener('click', colorSelected)
-color4.addEventListener('click', colorSelected)
+board.addEventListener ('click', changeColor);
 
+black.addEventListener('click', pickColor)
+purple.addEventListener('click', pickColor)
+blueViolet.addEventListener('click', pickColor)
+brown.addEventListener('click', pickColor)
 
-// Os pixels dentro do quadro não devem ter a classe `selected` quando são clicados.
+function clearBoard() {
+    const limpar = document.querySelectorAll('.pixel')
+    for (let i = 0; i < limpar.length; i += 1) {
+        limpar[i].style.backgroundColor = 'white'
+    }
+}
+
+function changeSize() {
+    const colorSquare = document.querySelectorAll('.pixel');
+    
+    let input = document.querySelector('#board-size')
+    let numero = input.value
+    numero *= numero
+
+    if(numero === '' || numero === 0) {
+        window.alert('Board inválido!')
+    } else {
+        for (let i = 0; i < colorSquare.length; i += 1) {
+            board.style.width = numero+'px'
+            board.style.height = numero+'px'
+        }
+    }
+   clearBoard()
+}
