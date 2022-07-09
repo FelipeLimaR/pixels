@@ -16,8 +16,6 @@
 }
 
 .pixel {
-    /* margin: 0;
-    padding: 0; */
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -27,16 +25,4 @@
 
 .color-1 {
     background-color: black;
-}
-
-.color-2 {
-    background-color: purple;
-}
-
-.color-3 {
-    background-color: blueviolet;
-}
-
-.color-4 {
-    background-color: brown;
 }
